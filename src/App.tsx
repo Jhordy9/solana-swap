@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import {
+  WalletDisconnectButton,
+  WalletMultiButton,
+} from '@solana/wallet-adapter-react-ui';
+import { Wallet } from './context/wallet';
+import { Hello } from './components/hello';
+
 import './App.css';
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wallet>
+      <div className='App'>
+        <Hello />
+        <WalletMultiButton style={{ margin: '5px' }} />
+        <WalletDisconnectButton style={{ margin: '5px' }} />
+      </div>
+    </Wallet>
   );
 }
 
