@@ -7,8 +7,6 @@ export const Hello = () => {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
 
-  console.log(publicKey?.toBase58());
-
   const onClick = useCallback(async () => {
     if (!publicKey) throw new WalletNotConnectedError();
 
